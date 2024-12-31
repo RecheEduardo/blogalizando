@@ -3,6 +3,7 @@
     <% @articles.each do | article |%>
         <h2><strong><%= article.title %></strong></h2>
         <p><%= article.body %></p>
+        <a href="/articles/<%= article.id%>">Visualizar</a>
         <hr>
     <% end %>
 </ul>
