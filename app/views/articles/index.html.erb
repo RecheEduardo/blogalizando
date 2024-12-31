@@ -1,7 +1,6 @@
 <h1>Artigos</h1>
 <%= link_to "Criar Artigo", new_article_path %>
 <hr />
-<ul>
   <% @articles.each do | article |%>
   <h2><strong><%= article.title %></strong></h2>
   <p><%= article.body %></p>
@@ -10,44 +9,3 @@
   <!-- Helper utilizado para retornar o link para artigo dentro da iteração -->
   <hr />
   <% end %>
-</ul>
-
-
-<button
-  type="button"
-  class="btn btn-primary"
-  data-bs-toggle="modal"
-  data-bs-target="#exampleModal"
->
-  Modal de teste
-</button>
-
-
-<div
-  class="modal fade"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal teste</h5>
-        <button
-          type="button"
-          class="btn-close"
-          data-bs-dismiss="modal"
-          aria-label="Close"
-        ></button>
-      </div>
-      <div class="modal-body">...</div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-          Não
-        </button>
-        <button type="button" class="btn btn-primary">Sim</button>
-      </div>
-    </div>
-  </div>
-</div>
