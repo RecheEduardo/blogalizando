@@ -1,4 +1,4 @@
-<h1>Novo Artigo</h1>
+<h1>Editar Artigo <%= @article.id %></h1>
 
 <%= form_with model: @article do | form | %>
     <div>
@@ -10,7 +10,7 @@
         <%= form.text_area :body%>        
     </div>
     <div>
-        <%= form.submit "Criar artigo"%>
+        <%= form.submit "Editar artigo"%>
     </div>
 <% end %>
 
