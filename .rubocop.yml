@@ -1,0 +1,13 @@
+# .rubocop.yml
+
+# Configura a regra para usar aspas simples ou duplas
+Style/StringLiterals:
+  EnforcedStyle: single_quotes  # Altere para 'double_quotes' se preferir aspas duplas
+
+# Desabilita a regra de linhas muito longas (padrão 80 caracteres)
+Layout/LineLength:
+  Max: 120  # Aumenta o limite de comprimento da linha para 120 caracteres
+
+# Habilita e configura o uso de espaços antes de um operador
+Layout/SpaceAroundOperators:
+  EnforcedStyle: no_space   # Use 'space' para exigir espaço ao redor de operadores

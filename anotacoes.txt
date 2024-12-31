@@ -1,0 +1,33 @@
+=== MODEL ===
+
+    O Model é sempre utilizado no singular, e faz a criação de uma estrutura
+    que faz conexão com o banco de dados e retorna a estrutura na forma de uma
+    classe dentro do Ruby.
+
+    -> Para criá-lo no rails, execute o seguinte comando no terminal:
+
+    $ rails generate model <NOME-DO-MODEL> <ATRIBUTO-DO-MODEL>:<TIPO-DO-DADO
+
+    -> Exemplo com dados:
+
+    $ rails generate model Usuario nome:string idade:int descricao:text
+
+
+=== CONTROLLER ===
+
+    O Controller é declarado no plural, ele recebe a rota acessada na aplicação 
+    e verifica se terá que realizar métodos no Model.
+
+    Caso NÃO PRECISE:
+    Apenas acessa o HTML da view e o retorna para o usuário
+
+    Caso PRECISE:
+    Acessa a lógica do model, retorna a Classe acessada no banco de dados e a
+    retorna para a view, para que a exibição dos dados resgatados possa ser feita
+
+    -> Para criá-lo no rails, execute o seguinte comando no terminal:
+
+    $ rails generate controller
+    -> Exemplo com dados: <NOME-DO-CONTROLLER> <ATRIBUTO-DO-CONTROLLER> 
+    flag opcional: --skip-routes | realiza a omissão da rota já escrita
+    manualmente em "routes.rb"
