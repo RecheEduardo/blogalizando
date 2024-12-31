@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
-  def create # Recebe parâmetros do POST para o URL “/articles” com o formulário no body.
+  def create # CREATE - Recebe parâmetros do POST para o URL “/articles” com o formulário no body.
     @article = Article.new(article_params)
     if @article.save
       redirect_to @article
@@ -16,7 +16,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show
+  def show # READ
     @article = Article.find(params[:id])
   end
 
@@ -24,13 +24,19 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])  
   end
 
-  def update
+  def update # UPDATE
     @article = Article.find(params[:id])
     if @article.update(article_params)
       redirect_to @article
     else
       render :edit
     end
+  end
+
+  def destroy # DELETE
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to root_path
   end
 
   private 
