@@ -1,17 +1,5 @@
 <h1>Editar Artigo <%= @article.id %></h1>
 
-<%= form_with model: @article do | form | %>
-    <div>
-        <%= form.label :title%>        
-        <%= form.text_field :title%>        
-    </div>
-    <div>
-        <%= form.label :body%>        
-        <%= form.text_area :body%>        
-    </div>
-    <div>
-        <%= form.submit "Editar artigo"%>
-    </div>
-<% end %>
+<%= render 'form', article: @article, submitMessage: 'Editar' %>
 
 <%= link_to("Cancelar", root_path)%>
