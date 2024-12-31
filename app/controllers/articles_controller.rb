@@ -1,9 +1,13 @@
 class ArticlesController < ApplicationController
+  # Principio DRY (Don't Repeat Yourself) 
+  # get_article será executado em todas as actions dentro do array.
+  before_action :get_article, only: %i[show edit update destroy]
+
   def index
     @articles = Article.all
   end
 
-  def new # Inicia a criação do novo artigo
+  def new # Inicia a criação do novo Artigo
     @article = Article.new
   end
 
@@ -16,16 +20,11 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def show # READ
-    @article = Article.find(params[:id])
-  end
+  def show; end # READ - abre a tela de visualização do Artigo
 
-  def edit
-    @article = Article.find(params[:id])  
-  end
+  def edit; end # Abre a tela de edição
 
-  def update # UPDATE
-    @article = Article.find(params[:id])
+  def update # UPDATE - Executa a edição do Artigo
     if @article.update(article_params)
       redirect_to @article
     else
@@ -33,8 +32,7 @@ class ArticlesController < ApplicationController
     end
   end
 
-  def destroy # DELETE
-    @article = Article.find(params[:id])
+  def destroy # DELETE - Executa a ação de excluir o Artigo
     @article.destroy
     redirect_to root_path
   end
@@ -43,5 +41,8 @@ class ArticlesController < ApplicationController
   def article_params # método encapsulado para permitir apenas certos valores do model
     params.require(:article).permit(:title, :body)   
   end
-  
+
+  def get_article
+    @article = Article.find(params[:id]) # Retorna a rota para o artigo selecionado
+  end
 end
