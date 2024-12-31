@@ -1,4 +1,6 @@
 <h1>Artigos</h1>
+<%= link_to "Criar Artigo", new_article_path %>
+<hr>
 <ul>
     <% @articles.each do | article |%>
         <h2><strong><%= article.title %></strong></h2>

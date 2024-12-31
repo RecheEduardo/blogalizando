@@ -7,11 +7,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  def new
+  def new # Inicia a criação do novo artigo
     @article = Article.new
   end
 
-  def create   
+  def create # Recebe parâmetros do POST para o URL “/articles” com o formulário no body.
     @article = Article.new(article_params)
     if @article.save
       redirect_to @article
