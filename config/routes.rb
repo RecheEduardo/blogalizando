@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   # get '/articles', to: 'articles#index'
   # get '/articles/:id', to: 'articles#show'
 
-  resources :articles # funcionalidade do Rails que retorna  
-end                   # helpers que podem ser utilizados na view
+  resources :articles 
+  # funcionalidade do Rails que retorna helpers que podem ser utilizados na view 
+end
