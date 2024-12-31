@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'articles#index'
 
-  get '/articles', to: 'articles#index'
-  get '/articles/:id', to: 'articles#show'
-  
-end
+  # get '/articles', to: 'articles#index'
+  # get '/articles/:id', to: 'articles#show'
+
+  resources :articles # funcionalidade do Rails que retorna  
+end                   # helpers que podem ser utilizados na view

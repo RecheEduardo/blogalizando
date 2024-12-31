@@ -3,7 +3,9 @@
     <% @articles.each do | article |%>
         <h2><strong><%= article.title %></strong></h2>
         <p><%= article.body %></p>
-        <a href="/articles/<%= article.id%>">Visualizar</a>
+        <!-- <a href="/articles/<%= article.id%>">Visualizar</a> MÉTODO ANTIGO-->
+        <a href="<%= article_path(article) %>">Visualizar</a> 
+        <!-- Helper utilizado para retornar o ID do artigo dentro da iteração -->
         <hr>
     <% end %>
 </ul>
