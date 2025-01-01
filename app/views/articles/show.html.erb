@@ -1,30 +1,30 @@
-<h1>Dados do Artigo <%= @article.id %></h1>
+<h1>Details of article <%= @article.id %></h1>
 
 <h2><strong><%= @article.title %></strong></h2>
 <p><%= @article.body %></p>
-<%= link_to "Editar Artigo", edit_article_path %>
+<%= link_to "Edit Article", edit_article_path %>
 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-Excluir Artigo
+    Delete article
 </button>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 <div class="modal-dialog" role="document">
     <div class="modal-content">
     <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal teste</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Delete article</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body">
-        Você realmente deseja deletar o artigo?
+        Do you really want to delete the article?
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal">Não</button>
+        <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal">No</button>
         <button type="button" class="btn bg-gradient bg-danger">
-        <%= link_to "Excluir", article_path(@article), method: :delete, class: "text-light" %>
+        <%= link_to "Yes", article_path(@article), method: :delete, class: "text-light text-decoration-none" %>
         </button>
     </div>
     </div>
 </div>
 </div>
 <br>
-<%= link_to "Voltar", root_path %>
+<%= link_to "Back", root_path %>

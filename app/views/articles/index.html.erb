@@ -1,11 +1,21 @@
-<h1>Artigos</h1>
-<%= link_to "Criar Artigo", new_article_path %>
-<hr />
-  <% @articles.each do | article |%>
-  <h2><strong><%= article.title %></strong></h2>
-  <p><%= article.body %></p>
-  <!-- <a href="/articles/<%= article.id%>">Visualizar</a> MÉTODO ANTIGO-->
-  <%= link_to("Visualizar", article)%>
-  <!-- Helper utilizado para retornar o link para artigo dentro da iteração -->
-  <hr />
-  <% end %>
+<%= render 'longer_featured'%>
+
+<div class="row mb-2">
+  <%= render 'medium_featured'%>
+  <%= render 'medium_featured'%>
+</div>
+
+<div class="row g-5">
+  <div class="col-md-8">
+    <h3 class="pb-4 mb-4 fst-italic border-bottom">
+      From the Firehose
+    </h3>
+    <%= link_to "Create Article", new_article_path %>
+    <br><br> 
+    <%= render @articles %>
+    <%= render 'pagination' %>
+  </div>
+  <!-- Funcionalidade do rails para iterar os componentes -->
+  <!-- a linha abaixo realiza um each.do para cada artigo que foi passado pelo controller -->
+  <%= render 'aside' %>
+</div>
