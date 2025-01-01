@@ -1,8 +1,9 @@
-<h1>Details of article <%= @article.id %></h1>
-
-<h2><strong><%= @article.title %></strong></h2>
-<p><%= @article.body %></p>
-<%= link_to "Edit Article", edit_article_path %>
+<h1><strong><%= @article.title %></strong></h1>
+<hr>
+<p style="text-align: justify;"><%= @article.body %></p>
+<%= link_to edit_article_path, class: "button-link text-decoration-none" do %>
+  <button type="button" class="btn btn-primary">Edit article</button>
+<% end %>
 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
     Delete article
 </button>
@@ -19,12 +20,13 @@
     </div>
     <div class="modal-footer">
         <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal">No</button>
-        <button type="button" class="btn bg-gradient bg-danger">
-        <%= link_to "Yes", article_path(@article), method: :delete, class: "text-light text-decoration-none" %>
-        </button>
+        <%= link_to "Yes", article_path(@article), method: :delete, class: "btn bg-gradient bg-danger text-light" %>
     </div>
     </div>
 </div>
 </div>
 <br>
-<%= link_to "Back", root_path %>
+<br>
+<%= link_to root_path  do%>
+    <button type="button" class="btn btn-secondary">Back</button>
+<% end %>

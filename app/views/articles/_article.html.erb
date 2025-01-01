@@ -1,8 +1,8 @@
 <article class="blog-post">
     <h2 class="blog-post-title"><%= article.title %></h2>
-    <p class="blog-post-meta"><%= article.created_at %> <a href="#">Chris</a></p>
-
-    <p><%= article.body%></p>
+    <p class="blog-post-meta"><%= m_d_comma_y(article.created_at) %> <a href="#">Chris</a></p>
+    <!-- Helper para formatar textos grandes nos artigos da home -->
+    <p style="text-align: justify;"><%= truncate(article.body, length: 300) %></p>
     
-    <%= link_to("Details", article)%>
+    <%= link_to "See more", article, class: 'btn bg-gradient bg-primary text-light'%>
 </article>
