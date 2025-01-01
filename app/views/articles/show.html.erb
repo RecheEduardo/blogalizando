@@ -1,32 +1,39 @@
 <h1><strong><%= @article.title %></strong></h1>
+<p class="blog-post-meta"><%= m_d_comma_y(@article.created_at) %> <a href="#">Chris</a></p>
 <hr>
 <p style="text-align: justify;"><%= @article.body %></p>
-<%= link_to edit_article_path, class: "button-link text-decoration-none" do %>
-  <button type="button" class="btn btn-primary">Edit article</button>
-<% end %>
-<button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Delete article
-</button>
+<hr>
+<div class="d-flex justify-content-between">
+    <div class="buttons">
+        <%= link_to edit_article_path, class: "button-link text-decoration-none" do %>
+        <button type="button" class="btn btn-primary">Edit article</button>
+        <% end %>
+        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Delete article
+        </button>
+    </div>
+    <div class="back-btn">
+        <%= link_to root_path  do%>
+        <button type="button" class="btn btn-lg btn-secondary">Back</button>
+        <% end %>
+    </div>  
+</div>
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-<div class="modal-dialog" role="document">
-    <div class="modal-content">
-    <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Delete article</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    </div>
-    <div class="modal-body">
-        Do you really want to delete the article?
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal">No</button>
-        <%= link_to "Yes", article_path(@article), method: :delete, class: "btn bg-gradient bg-danger text-light" %>
-    </div>
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete article</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Do you really want to delete the article?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal">No</button>
+            <%= link_to "Yes", article_path(@article), method: :delete, class: "btn bg-gradient bg-danger text-light" %>
+        </div>
+        </div>
     </div>
 </div>
-</div>
-<br>
-<br>
-<%= link_to root_path  do%>
-    <button type="button" class="btn btn-secondary">Back</button>
-<% end %>
+

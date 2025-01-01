@@ -4,7 +4,8 @@ class ArticlesController < ApplicationController
   before_action :get_article, only: %i[show edit update destroy]
 
   def index
-    @articles = Article.all
+    current_page = (params[:page] || 1).to_i
+    @articles = Article.order(created_at: :desc).page(current_page).per(3) # Uso da gem kaminari para paginação de 3 articles
   end
 
   def new # Inicia a criação do novo Artigo
