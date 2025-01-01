@@ -4,8 +4,13 @@ class ArticlesController < ApplicationController
   before_action :get_article, only: %i[show edit update destroy]
 
   def index
-    current_page = (params[:page] || 1).to_i
-    @articles = Article.order(created_at: :desc).page(current_page).per(3) # Uso da gem kaminari para paginação de 3 articles
+    @highlights = Article.order(created_at: :desc).first(3) # Seleciona os últimos 3 Articles para os highlights da página
+
+    current_page = (params[:page] || 1).to_i # Recebe: Página passada na URL pela gem Kaminari OU Página inicial da aplicação
+    ids_highlight = @highlights.pluck(:id).join(',') # Recebe os ID's usados como parametro no @articles
+
+    # Uso da gem Kaminari para paginação de 3 articles, excluindo a seleção dos primeiros 3 para o highlight
+    @articles = Article.order(created_at: :desc).where("id NOT IN(#{ids_highlight})").page(current_page).per(3) 
   end
 
   def new # Inicia a criação do novo Artigo
