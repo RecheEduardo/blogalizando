@@ -1,8 +1,9 @@
-<%= render 'longer_featured', article: @highlights[0]%>
+<!-- Helper de renderização: render_if -->
+<%= render_if(@highlights[0], 'longer_featured', article: @highlights[0])%>
 
 <div class="row mb-2">
-  <%= render 'medium_featured', article: @highlights[1]%>
-  <%= render 'medium_featured', article: @highlights[2]%>
+  <%= render_if(@highlights[1], 'medium_featured', article: @highlights[1])%>
+  <%= render_if(@highlights[2], 'medium_featured', article: @highlights[2])%>
 </div>
 
 <div class="row g-5">
