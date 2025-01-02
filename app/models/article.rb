@@ -1,4 +1,6 @@
 class Article < ApplicationRecord
+    belongs_to :category # relaciona a categoria do article
+
     validates :title, presence: :true, length: {minimum: 5} # validação de dados na inserção
     validates :body, presence: :true, length: {minimum:10}
 
