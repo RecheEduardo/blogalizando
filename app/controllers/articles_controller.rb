@@ -24,7 +24,7 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article, notice: "Article was successfully created."
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
     if @article.update(article_params)
       redirect_to @article, notice: "Article was successfully updated."
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
   private
 
   # método encapsulado para permitir apenas certos valores do model
-  def article_params 
+  def article_params
     params.require(:article).permit(:title, :body)
   end
 

@@ -1,8 +1,8 @@
 class Article < ApplicationRecord
     belongs_to :category # relaciona a categoria do article
 
-    validates :title, presence: :true, length: {minimum: 5} # validação de dados na inserção
-    validates :body, presence: :true, length: {minimum:10}
+    validates :title, presence: true, length: {minimum: 5} # validação de dados na inserção
+    validates :body, presence: true, length: {minimum:10}
 
     # Scopes para manter responsabilidades de consulta para o model da aplicação
     scope :desc_order, -> { order(created_at: :desc)} # Ordena pela data de criação

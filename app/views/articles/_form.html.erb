@@ -1,14 +1,27 @@
-<%= simple_form_for article do |form| %>
+<%= simple_form_for @article do |form| %>
+  <% if @article.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div>
-    <%= form.input :title %>        
-    <%= form.input :body, input_html: {rows: 10} %>        
+    <%= form.input :title, input_html: { class: "form-control #{'is-invalid' if @article.errors[:title].any?}" } %>
+  </div>
+
+  <div>
+    <%= form.input :body, input_html: { rows: 10, class: "form-control #{'is-invalid' if @article.errors[:body].any?}" } %>
   </div>
 
   <br>
 
   <p>
-    <%= form.button :submit, class: 'btn btn-primary'%>
-    <%= link_to("Cancelar", @article, class: 'btn btn-secondary')%>
+    <%= form.button :submit, class: 'btn btn-primary' %>
+    <%= link_to "Cancelar", articles_path, class: 'btn btn-secondary' %>
   </p>
 
 <% end %>
