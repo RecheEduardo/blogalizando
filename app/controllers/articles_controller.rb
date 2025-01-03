@@ -16,12 +16,12 @@ class ArticlesController < ApplicationController
 
   # Inicia a criação do novo Artigo
   def new
-    @article = Article.new
+    @article = current_user.articles.new
   end
 
   # CREATE - Recebe parâmetros do POST para o URL “/articles” com o formulário no body.
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
     if @article.save
       redirect_to @article, notice: "Article was successfully created."
     else

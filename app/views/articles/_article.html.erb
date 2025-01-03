@@ -1,9 +1,12 @@
 <article class="blog-post">
     <strong class="d-inline-block text-secondary"><%= article.category.name if article.category %></strong>
-    <h2 class="blog-post-title"><%= article.title %></h2>
-    <p class="blog-post-meta"><%= m_d_comma_y(article.created_at) %> <a href="#">Chris</a></p>
+    <h2 class="blog-post-title my-2"><%= article.title %></h2>
+    <p class="blog-post-meta">
+        <%= m_d_comma_y(article.created_at) %> by
+        <span class="text-secondary fw-bold"><%= article.user.email if article.user %>
+    </p>
     <!-- Helper para formatar textos grandes nos artigos da home -->
     <p style="text-align: justify;"><%= truncate(article.body, length: 300) %></p>
     
-    <%= link_to "See more...", article, class: 'btn bg-gradient bg-primary text-light'%>
+    <%= link_to "See more...", article, class: 'btn btn-primary'%>
 </article>

@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
     belongs_to :category # relaciona a categoria do article
+    belongs_to :user # relaciona o usuário que postou o article
 
     validates :title, presence: true, length: {minimum: 5} # validação de dados na inserção
     validates :body, presence: true, length: {minimum:10}

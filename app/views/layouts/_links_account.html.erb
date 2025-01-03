@@ -1,0 +1,23 @@
+<% if user_signed_in? %>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.email %>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+            <li><%= link_to 'Edit user', edit_user_registration_path, class: 'dropdown-item py-3' %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'dropdown-item py-3' %></li>
+        </ul>
+    </div>
+<% else %>
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Enter
+        </button>
+        <ul class="dropdown-menu dropdown-menu-dark">
+            <li><%= link_to 'Sign in', new_user_session_path, class: 'dropdown-item py-3' %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><%= link_to 'Sign up', new_user_registration_path, class: 'dropdown-item py-3' %></li>
+        </ul>
+    </div>
+<% end%>

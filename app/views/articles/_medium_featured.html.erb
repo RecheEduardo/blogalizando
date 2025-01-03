@@ -3,7 +3,10 @@
     <div class="col p-4 d-flex flex-column position-static">
       <strong class="d-inline-block mb-2 text-primary"><%= article.category.name if article.category %></strong>
       <h3 class="mb-0"><%= article.title%></h3>
-      <div class="mb-1 text-muted"><%= m_d_comma_y(article.created_at) %></div>
+      <div class="my-1 text-muted">
+        <%= m_d_comma_y(article.created_at) %> by
+        <span class="text-secondary fw-bold"><%= article.user.email if article.user %></span>
+      </div>
       <p class="card-text mb-auto"><%= truncate(article.body, length: 150) %></p>
       <%= link_to "See more...", article, class:"stretched-link" %>
     </div>
