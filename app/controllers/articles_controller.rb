@@ -53,7 +53,7 @@ class ArticlesController < ApplicationController
 
   # método encapsulado para permitir apenas certos valores do model
   def article_params
-    params.require(:article).permit(:title, :body)
+    params.require(:article).permit(:title, :body, :category_id)
   end
 
   # Retorna a rota para o artigo selecionado

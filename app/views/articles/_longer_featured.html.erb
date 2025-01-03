@@ -1,5 +1,7 @@
 <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
+      <h2 class="text-secondary fst-italic"><%= article.category.name if article.category %></h2>
+      <hr>
       <h1 class="display-4 fst-italic"><%= article.title %></h1>
       <!-- Helper para formatar textos grandes nos artigos da home -->
       <p class="lead my-3"><%= truncate(article.body, length: 150) %></p>
