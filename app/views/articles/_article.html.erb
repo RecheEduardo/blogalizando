@@ -1,4 +1,5 @@
 <article class="blog-post">
+    <strong class="d-inline-block text-secondary"><%= article.category.name if article.category %></strong>
     <h2 class="blog-post-title"><%= article.title %></h2>
     <p class="blog-post-meta"><%= m_d_comma_y(article.created_at) %> <a href="#">Chris</a></p>
     <!-- Helper para formatar textos grandes nos artigos da home -->

@@ -1,4 +1,5 @@
 <h1><strong><%= @article.title %></strong></h1>
+<strong class="d-inline-block text-primary"><%= @article.category.name if @article.category %></strong>
 <p class="blog-post-meta"><%= m_d_comma_y(@article.created_at) %> <a href="#">Chris</a></p>
 <hr>
 <p style="text-align: justify;"><%= @article.body %></p>
