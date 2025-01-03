@@ -16,11 +16,8 @@
         <tr>
           <td scope="row"><strong><%= category.name %></strong></td>
           <td>
-            <%= link_to category, class: 'btn bg-gradient bg-primary text-light' do %>
-              <i class="bi bi-pencil-square"></i> Expand
-            <% end %>
 
-            <%= link_to edit_category_path(category), class: 'btn bg-gradient bg-success text-light' do %>
+            <%= link_to edit_category_path(category), class: 'btn bg-gradient bg-primary text-light' do %>
               <i class="bi bi-pencil-square"></i> Edit
             <% end %>
 

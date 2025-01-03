@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
-  resources :categories
   root 'articles#index'
 
-  # get '/articles', to: 'articles#index'
-  # get '/articles/:id', to: 'articles#show'
-
-  resources :articles 
   # funcionalidade do Rails que retorna helpers que podem ser utilizados na view 
+  resources :categories, except: %i[show]
+  resources :articles 
 end

@@ -1,9 +1,0 @@
-<h1 class="text-center display-3"><%= render @category %></h1>
-<hr>
-<div class="d-flex justify-content-between align-items-center">
-  <div>
-    <%= link_to "Edit category", edit_category_path(@category), class: "btn btn-lg btn-primary" %>
-    <%= link_to "Delete category", @category, method: :delete, class: "btn btn-lg btn-danger" %>
-  </div>
-  <%= link_to "Back to categories", categories_path, class: "btn btn-lg btn-secondary" %>
-</div>
