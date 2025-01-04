@@ -8,5 +8,5 @@ class Article < ApplicationRecord
     # Scopes para manter responsabilidades de consulta para o model da aplicação
     scope :desc_order, -> { order(created_at: :desc)} # Ordena pela data de criação
     scope :without_highlights, ->(ids) { where("id NOT IN(#{ids})") if ids.present?} # Seleciona os IDs fora do parâmetro
-    scope :filter_by_category, ->(category_id) {where(category_id: category_id) if category_id.present?} # Filtra ids de categorias
+    scope :filter_by_category, ->(category) {where(category_id: category.id) if category.present?} # Filtra ids de categorias
 end

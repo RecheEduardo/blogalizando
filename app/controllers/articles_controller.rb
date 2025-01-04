@@ -7,14 +7,16 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
-    @highlights = Article.filter_by_category(params[:category_id])
+    category = Category.find_by_name(params[:category]) if params[:category].present?
+
+    @highlights = Article.filter_by_category(category)
                   .desc_order.first(3) # Seleciona os últimos 3 Articles para os highlights da página
 
     ids_highlight = @highlights.pluck(:id).join(',') # Recebe os ID's usados como parametro no @articles
 
     # Uso da gem Kaminari para paginação de 3 articles, excluindo a seleção dos primeiros 3 para o highlight
     @articles = Article.without_highlights(ids_highlight)
-                .filter_by_category(params[:category_id])
+                .filter_by_category(category)
                 .desc_order.page(current_page).per(3)
                 
     @categories = Category.sorted
