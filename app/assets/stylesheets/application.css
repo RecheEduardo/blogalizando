@@ -1,3 +1,10 @@
 .main-content{
     min-height: 60svh;
 }
+.scale-btn{ transition: .25s !important;}
+.scale-btn:hover {scale: 1.05; transition: .25s;}
+
+.category-active { 
+    font-weight: bold !important;
+    text-decoration: underline !important;
+}

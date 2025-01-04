@@ -1,17 +1,23 @@
 class ArticlesController < ApplicationController
+  include(Paginable)
+  
   # Principio DRY (Don't Repeat Yourself)
   # set_article será executado em todas as actions dentro do array.
   before_action :authenticate_user!, except: %i[index show]
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
-    @highlights = Article.desc_order.first(3) # Seleciona os últimos 3 Articles para os highlights da página
+    @highlights = Article.filter_by_category(params[:category_id])
+                  .desc_order.first(3) # Seleciona os últimos 3 Articles para os highlights da página
 
-    current_page = (params[:page] || 1).to_i # Recebe: Página passada na URL pela gem Kaminari OU Página inicial da aplicação
     ids_highlight = @highlights.pluck(:id).join(',') # Recebe os ID's usados como parametro no @articles
 
     # Uso da gem Kaminari para paginação de 3 articles, excluindo a seleção dos primeiros 3 para o highlight
-    @articles = Article.without_highlights(ids_highlight).desc_order.page(current_page).per(3) 
+    @articles = Article.without_highlights(ids_highlight)
+                .filter_by_category(params[:category_id])
+                .desc_order.page(current_page).per(3)
+                
+    @categories = Category.sorted
   end
 
   # Inicia a criação do novo Artigo
