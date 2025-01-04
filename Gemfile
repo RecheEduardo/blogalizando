@@ -65,7 +65,6 @@ end
 # GENS ADICIONADAS NO PROJETO
 gem "kaminari"
 gem 'simple_form'
-gem "dartsass-rails"
 gem "devise"
 gem "sqlite3", ">= 2.1"
 gem 'letter_opener_web', group: :development
