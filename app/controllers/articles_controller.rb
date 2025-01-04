@@ -12,6 +12,7 @@ class ArticlesController < ApplicationController
 
     @highlights = Article.includes(:category, :user) # método para eliminar n + 1 queries
                          .filter_by_category(category)
+                         .filter_by_archive(params[:month_year])
                          .desc_order # Ordena pela data de criação
                          .first(3) # Seleciona os últimos 3 Articles para os highlights da página
 
@@ -21,6 +22,7 @@ class ArticlesController < ApplicationController
     @articles = Article.includes(:category, :user)
                        .without_highlights(ids_highlight)
                        .filter_by_category(category)
+                       .filter_by_archive(params[:month_year])
                        .desc_order
                        .page(current_page)
                        .per(3)
