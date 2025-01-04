@@ -1,12 +1,18 @@
 <h1 class="mt-3"><strong><%= @article.title %></strong></h1>
+
 <strong class="d-inline-block text-primary"><%= @article.category.name if @article.category %></strong>
+
 <p class="blog-post-meta">
     <%= m_d_comma_y(@article.created_at) %> by 
     <span class="text-secondary fw-bold"><%= @article.user.email if @article.user %></span>
 </p>
+
 <hr>
+
 <p style="text-align: justify;" class="fs-5"><%= @article.body %></p>
+
 <hr>
+
 <div class="d-flex justify-content-between">
     <div class="buttons">
         <% if policy(@article).edit?%>
@@ -23,7 +29,7 @@
     </div>
     <div class="back-btn">
         <%= link_to root_path  do%>
-        <button type="button" class="btn btn-lg btn-outline-secondary">Back</button>
+            <button type="button" class="btn btn-lg btn-outline-secondary">Back</button>
         <% end %>
     </div>
 </div>
@@ -31,54 +37,15 @@
 
 <!-- Listagem de comentários -->
 <h2 class="mt-5 mb-3">Comments:</h2>
-
 <% @article.comments.each do |comment|%>
-    <div class="card my-3">
-        <div class="card-body">
-            <blockquote class="blockquote mb-0">
-                <p><%= comment.body %></p>
-                <hr>
-                <div class="d-flex justify-content-between">
-                    <div>
-                        <strong class="text-secondary small">
-                            <i class="fa-solid fa-user px-2"></i>
-                            <cite title="Source Title" style="text-decoration: underline;">
-                                <%= comment.user.email %>
-                            </cite>
-                            on <%= m_d_comma_y(comment.created_at) %> 
-                        </strong>
-                    </div>
-                    <div>
-                        <% if policy(@article).edit?%>
-                            <%= link_to edit_article_path, class: "button-link text-decoration-none" do %>
-                                <button type="button" class="btn btn-sm btn-outline-primary">Edit comment</button>
-                            <% end %>
-                         <% end %>
-        
-                        <% if policy(@article).destroy?%>
-                            <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                Delete comment
-                            </button>
-                        <% end %>
-                    </div>
-                </div>
-            </blockquote>
-        </div>
-    </div>
+    <%= render 'comments/comment', comment: comment %>
 <% end %>
 
 <hr class="mt-4 mb-2">
 
 <!-- Adicionar comentário -->
 <strong class="fs-5 text-secondary">Add your comment:</strong>
-<%= simple_form_for [@article, @article.comments.build] do |form| %>
-    <div class="mt-2">
-        <%= form.input :body, 
-                    label: false, 
-                    input_html: { rows: 2, class: "form-control flex-grow-1 #{'is-invalid' if @article.errors[:body].any?}" } %>
-        <%= form.button :submit, class: 'btn btn-outline-success mb-3' %>
-  </div>
-<% end %>
+<%= render 'comments/form' %>
 
 <!-- Modal de exclusão -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

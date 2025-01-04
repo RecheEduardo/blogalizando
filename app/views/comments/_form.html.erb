@@ -1,0 +1,8 @@
+<%= simple_form_for [@article, @article.comments.build] do |form| %>
+    <div class="mt-2">
+        <%= form.input :body, 
+                    label: false, 
+                    input_html: { rows: 2, class: "form-control flex-grow-1 #{'is-invalid' if @article.errors[:body].any?}" } %>
+        <%= form.button :submit, class: 'btn btn-outline-success mb-3' %>
+    </div>
+<% end %>

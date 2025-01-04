@@ -1,0 +1,51 @@
+<div class="card my-3">
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p><%= comment.body %></p>
+            <hr>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <strong class="text-secondary small">
+                        <i class="fa-solid fa-user px-2"></i>
+                        <cite title="Source Title" style="text-decoration: underline;">
+                            <%= comment.user.email %>
+                        </cite>
+                        on <%= m_d_comma_y(comment.created_at) %> 
+                    </strong>
+                </div>
+                <div>
+                    <% if policy(@article).edit?%>
+                        <%= link_to edit_article_path, class: "button-link text-decoration-none" do %>
+                            <button type="button" class="btn btn-sm btn-outline-primary">Edit comment</button>
+                        <% end %>
+                     <% end %>
+    
+                    <% if policy(@article).destroy?%>
+                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            Delete comment
+                        </button>
+                    <% end %>
+                </div>
+            </div>
+        </blockquote>
+    </div>
+</div>
+
+<!-- Modal de exclusão -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete article</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            Do you really want to delete the article?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal">No</button>
+            <%= link_to "Yes", article_path(@article), method: :delete, class: "btn bg-gradient bg-danger text-light" %>
+        </div>
+        </div>
+    </div>
+</div>
