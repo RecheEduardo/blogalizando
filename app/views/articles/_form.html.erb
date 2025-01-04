@@ -18,7 +18,7 @@
   </div>
   <div>
     <!-- O atributo collection filtra para que as categorias aparecam em ordem alfabética -->
-    <%= form.association :category, collection: Category.sorted, prompt: "Choose your category",input_html: { class: "form-control" } %>
+    <%= form.association :category, collection: @categories, prompt: "Choose your category",input_html: { class: "form-control" } %>
   </div>
 
   <br>
