@@ -68,4 +68,6 @@ gem 'simple_form'
 gem "dartsass-rails"
 gem "devise"
 gem 'letter_opener_web', group: :development
-gem "pundit", "~> 2.4"
+gem "pundit"
+gem "groupdate"
+

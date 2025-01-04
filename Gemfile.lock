@@ -122,6 +122,8 @@ GEM
     google-protobuf (4.29.2-x64-mingw-ucrt)
       bigdecimal
       rake (>= 13)
+    groupdate (6.5.1)
+      activesupport (>= 7)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.1.0)
@@ -370,6 +372,7 @@ DEPENDENCIES
   dartsass-rails
   debug
   devise
+  groupdate
   importmap-rails
   jbuilder
   kamal
@@ -377,7 +380,7 @@ DEPENDENCIES
   letter_opener_web
   propshaft
   puma (>= 5.0)
-  pundit (~> 2.4)
+  pundit
   rails (~> 8.0.1)
   rubocop-rails-omakase
   selenium-webdriver

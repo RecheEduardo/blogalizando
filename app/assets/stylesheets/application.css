@@ -4,7 +4,7 @@
 .scale-btn{ transition: .25s !important;}
 .scale-btn:hover {scale: 1.05; transition: .25s;}
 
-.category-active { 
+.filter-active { 
     font-weight: bold !important;
     text-decoration: underline !important;
 }

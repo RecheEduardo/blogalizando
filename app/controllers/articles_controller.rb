@@ -7,9 +7,10 @@ class ArticlesController < ApplicationController
   before_action :set_article, only: %i[show edit update destroy]
 
   def index
+    @categories = Category.sorted
     category = Category.find_by_name(params[:category]) if params[:category].present?
 
-    @highlights = Article.includes(:category, :user) # método para eliminar n + 1
+    @highlights = Article.includes(:category, :user) # método para eliminar n + 1 queries
                          .filter_by_category(category)
                          .desc_order # Ordena pela data de criação
                          .first(3) # Seleciona os últimos 3 Articles para os highlights da página
@@ -23,8 +24,9 @@ class ArticlesController < ApplicationController
                        .desc_order
                        .page(current_page)
                        .per(3)
-                
-    @categories = Category.sorted
+
+    # Retorna o agrupamento dos posts em ordem cronológica
+    @archives = Article.group_by_month(:created_at, format: '%B %Y').count
   end
 
   # Inicia a criação do novo Artigo
