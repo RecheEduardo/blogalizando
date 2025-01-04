@@ -43,11 +43,10 @@ group :development, :test do
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   
   # Use sqlite3 as the database for Active Record
-  gem "sqlite3", ">= 2.1"
-
+  
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
-
+  
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
@@ -68,6 +67,7 @@ gem "kaminari"
 gem 'simple_form'
 gem "dartsass-rails"
 gem "devise"
+gem "sqlite3", ">= 2.1"
 gem 'letter_opener_web', group: :development
 gem "pundit"
 gem "groupdate"
