@@ -6,7 +6,10 @@ Rails.application.routes.draw do
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
 
-  # funcionalidade do Rails que retorna helpers que podem ser utilizados na view 
+  resources :articles do 
+    resources :comments, only: %i[create]
+  end
+
+  # funcionalidade do Rails que retorna helpers & rotas do programa que podem ser utilizados na view 
   resources :categories, except: %i[show]
-  resources :articles 
 end
