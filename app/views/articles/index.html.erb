@@ -1,34 +1,37 @@
-<!-- Helper de renderização: render_if -->
-<%= render_if(@highlights[0], 'longer_featured', article: @highlights[0])%>
-
-<div class="row mb-2">
-  <%= render_if(@highlights[1], 'medium_featured', article: @highlights[1])%>
-  <%= render_if(@highlights[2], 'medium_featured', article: @highlights[2])%>
-</div>
-
-<div class="row g-5">
-  <div class="col-md-8">
-    <h3 class="pb-4 mb-4 fst-italic border-bottom">
-      All my journey
-    </h3>
-    <%= link_to "Create your article", new_article_path, class: 'btn btn-lg btn-success' %>
-    <br><br> 
-    <!-- Funcionalidade do rails para iterar os componentes -->
-    <!-- a linha abaixo realiza um each.do para cada artigo que foi passado pelo controller -->
-    <%= render @articles %>
-    <%= render 'pagination' %>
+<div class="popIn">
+  <!-- Helper de renderização: render_if -->
+  <div class="popUp">
+    <%= render_if(@highlights[0], 'longer_featured', article: @highlights[0])%>
+  </div>  
+  <div class="row mb-2 fadeInUp">
+    <%= render_if(@highlights[1], 'medium_featured', article: @highlights[1])%>
+    <%= render_if(@highlights[2], 'medium_featured', article: @highlights[2])%>
   </div>
-  <%= render 'aside' %>
-</div>
 
-<!-- Carrega a navbar apenas no index da aplicação pelo 'yield' -->
-<%= content_for :category_filter do %> 
-  <div class="nav-scroller py-1 mb-3 border-bottom">
-    <nav class="nav nav-underline justify-content-between">
-      <% @categories.each do | category | %>
-        <%= link_to category.name, articles_path(category: category.name), 
-        class: "nav-item nav-link link-body-emphasis #{'filter-active' if category.name.to_s == params[:category]}" %>
-      <% end %>
-    </nav>
+  <div class="row g-5">
+    <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        All my journey
+      </h3>
+      <%= link_to "Create your article", new_article_path, class: 'btn btn-lg btn-success' %>
+      <br><br> 
+      <!-- Funcionalidade do rails para iterar os componentes -->
+      <!-- a linha abaixo realiza um each.do para cada artigo que foi passado pelo controller -->
+      <%= render @articles %>
+      <%= render 'pagination' %>
+    </div>
+    <%= render 'aside' %>
   </div>
-<% end %>
+
+  <!-- Carrega a navbar apenas no index da aplicação pelo 'yield' -->
+  <%= content_for :category_filter do %> 
+    <div class="nav-scroller py-1 mb-3 border-bottom">
+      <nav class="nav nav-underline justify-content-between">
+        <% @categories.each do | category | %>
+          <%= link_to category.name, articles_path(category: category.name), 
+          class: "nav-item nav-link link-body-emphasis #{'filter-active' if category.name.to_s == params[:category]}" %>
+        <% end %>
+      </nav>
+    </div>
+  <% end %>
+</div>

@@ -1,51 +1,55 @@
-<h1 class="mt-3"><strong><%= @article.title %></strong></h1>
-
-<strong class="d-inline-block text-primary"><%= @article.category.name if @article.category %></strong>
-
-<p class="blog-post-meta">
-    <%= m_d_comma_y(@article.created_at) %> by 
-    <span class="text-secondary fw-bold"><%= @article.user.email if @article.user %></span>
-</p>
-
-<hr>
-
-<p style="text-align: justify;" class="fs-5"><%= @article.body %></p>
-
-<hr>
-
-<div class="d-flex justify-content-between">
-    <div class="buttons">
-        <% if policy(@article).edit?%>
-            <%= link_to edit_article_path, class: "button-link text-decoration-none" do %>
-                <button type="button" class="btn btn-primary">Edit article</button>
+<div class="fadeInUp">
+    <h1 class="mt-3"><strong><%= @article.title %></strong></h1>
+    
+    <strong class="d-inline-block text-primary"><%= @article.category.name if @article.category %></strong>
+    
+    <p class="blog-post-meta">
+        <%= m_d_comma_y(@article.created_at) %> by 
+        <span class="text-secondary fw-bold"><%= @article.user.email if @article.user %></span>
+    </p>
+    
+    <hr>
+    
+    <p style="text-align: justify;" class="fs-5"><%= @article.body %></p>
+    
+    <hr>
+    
+    <div class="d-flex justify-content-between">
+        <div class="buttons">
+            <% if policy(@article).edit?%>
+                <%= link_to edit_article_path, class: "button-link text-decoration-none" do %>
+                    <button type="button" class="btn btn-primary">Edit article</button>
+                <% end %>
             <% end %>
-        <% end %>
-
-        <% if policy(@article).destroy?%>
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Delete article
-            </button>
-        <% end %>
-    </div>
-    <div class="back-btn">
-        <%= link_to root_path  do%>
-            <button type="button" class="btn btn-lg btn-outline-secondary">Back</button>
-        <% end %>
+    
+            <% if policy(@article).destroy?%>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Delete article
+                </button>
+            <% end %>
+        </div>
+        <div class="back-btn">
+            <%= link_to root_path  do%>
+                <button type="button" class="btn btn-lg btn-outline-secondary">Back</button>
+            <% end %>
+        </div>
     </div>
 </div>
 <br>
 
-<!-- Listagem de comentários -->
-<h2 class="mt-5 mb-3">Comments:</h2>
-<% @article.comments.each do |comment|%>
-    <%= render 'comments/comment', comment: comment %>
-<% end %>
+<div class="popIn">
+    <!-- Listagem de comentários -->
+    <h2 class="mt-5 mb-3">Comments:</h2>
+    <% @article.comments.each do |comment|%>
+        <%= render 'comments/comment', comment: comment %>
+    <% end %>
 
-<hr class="mt-4 mb-2">
+    <hr class="mt-4 mb-2">
 
-<!-- Adicionar comentário -->
-<strong class="fs-5 text-secondary">Add your comment:</strong>
-<%= render 'comments/form' %>
+    <!-- Adicionar comentário -->
+    <strong class="fs-5 text-secondary">Add your comment:</strong>
+    <%= render 'comments/form' %>
+</div>
 
 <!-- Modal de exclusão -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
