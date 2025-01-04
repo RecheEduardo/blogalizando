@@ -7,7 +7,7 @@ body{
     min-height: 60svh;
 }
 .scale-btn{ transition: .25s !important;}
-.scale-btn:hover {scale: 1.05; transition: .25s;}
+.scale-btn:hover {scale: 1.1; transition: .25s;}
 
 .filter-active { 
     font-weight: bold !important;
