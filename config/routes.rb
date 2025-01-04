@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :articles do 
-    resources :comments, only: %i[create]
+    resources :comments, only: %i[create destroy]
   end
 
   # funcionalidade do Rails que retorna helpers & rotas do programa que podem ser utilizados na view 

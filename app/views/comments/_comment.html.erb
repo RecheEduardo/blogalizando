@@ -14,14 +14,8 @@
                     </strong>
                 </div>
                 <div>
-                    <% if policy(@article).edit?%>
-                        <%= link_to edit_article_path, class: "button-link text-decoration-none" do %>
-                            <button type="button" class="btn btn-sm btn-outline-primary">Edit comment</button>
-                        <% end %>
-                     <% end %>
-    
-                    <% if policy(@article).destroy?%>
-                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <% if current_user && (current_user.admin? || current_user.id == comment.user_id) %>
+                        <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-<%= comment.id %>">
                             Delete comment
                         </button>
                     <% end %>
@@ -32,20 +26,20 @@
 </div>
 
 <!-- Modal de exclusão -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal-<%= comment.id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-        <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Delete article</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            Do you really want to delete the article?
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal">No</button>
-            <%= link_to "Yes", article_path(@article), method: :delete, class: "btn bg-gradient bg-danger text-light" %>
-        </div>
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Delete comment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Do you really want to delete this comment?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal">No</button>
+                <%= link_to "Yes", article_comment_path(@article, comment), method: :delete, class: "btn bg-gradient bg-danger text-light" %>
+            </div>
         </div>
     </div>
 </div>

@@ -8,6 +8,22 @@ class CommentsController < ApplicationController
         redirect_to article_path(@article), notice: 'Comment was sucessfully created!'
     end
 
+    def destroy
+        @comment = @article.comments.find(params[:id])
+
+        unless current_user&.admin? || current_user&.id == @comment.user_id
+            redirect_to article_path(@article), alert: "You are not authorized to delete this comment."
+            return
+        end
+
+        @comment.destroy!
+
+        respond_to do |format|
+            format.html { redirect_to article_path(@article), status: :see_other, notice: "Comment was successfully deleted." }
+            format.json { head :no_content }
+        end
+    end
+
     private
 
     def comment_params
