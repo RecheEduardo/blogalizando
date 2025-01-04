@@ -1,14 +1,16 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user! # só é possível acessar as rotas se o usuário estiver logado
   before_action :set_category, only: %i[edit update destroy ]
 
   # GET /categories or /categories.json
   def index
-    @categories = Category.sorted
-  end
+    @categories = policy_scope(Category.sorted) # helper que autoriza um grupo de dados
+    end
 
   # GET /categories/new
   def new
     @category = Category.new
+    authorize @category
   end
 
   # GET /categories/1/edit
@@ -18,6 +20,7 @@ class CategoriesController < ApplicationController
   # POST /categories or /categories.json
   def create
     @category = Category.new(category_params)
+    authorize @category
 
     respond_to do |format|
       if @category.save

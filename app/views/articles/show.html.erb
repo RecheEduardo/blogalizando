@@ -9,12 +9,17 @@
 <hr>
 <div class="d-flex justify-content-between">
     <div class="buttons">
-        <%= link_to edit_article_path, class: "button-link text-decoration-none" do %>
-        <button type="button" class="btn btn-primary">Edit article</button>
+        <% if policy(@article).edit?%>
+            <%= link_to edit_article_path, class: "button-link text-decoration-none" do %>
+                <button type="button" class="btn btn-primary">Edit article</button>
+            <% end %>
         <% end %>
-        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            Delete article
-        </button>
+
+        <% if policy(@article).destroy?%>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Delete article
+            </button>
+        <% end %>
     </div>
     <div class="back-btn">
         <%= link_to root_path  do%>
