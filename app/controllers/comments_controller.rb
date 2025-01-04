@@ -3,9 +3,9 @@ class CommentsController < ApplicationController
     
     def create
         @article.comments # Adiciona na criação o usuário que fez o comentário
-        .create(comment_params.to_h.merge!({ user_id: current_user.id}))
+        .create(comment_params.to_h.merge!({ user_id: current_user&.id}))
 
-        redirect_to article_path(@article)
+        redirect_to article_path(@article), notice: 'Comment was sucessfully created!'
     end
 
     private
