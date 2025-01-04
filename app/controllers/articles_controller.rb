@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
   # Principio DRY (Don't Repeat Yourself)
-  # get_article será executado em todas as actions dentro do array.
-  before_action :get_article, only: %i[show edit update destroy]
-  before_action :authenticate_user!, only: %i[new create edit update destroy]
+  # set_article será executado em todas as actions dentro do array.
+  before_action :authenticate_user!, except: %i[index show]
+  before_action :set_article, only: %i[show edit update destroy]
 
   def index
     @highlights = Article.desc_order.first(3) # Seleciona os últimos 3 Articles para os highlights da página
@@ -58,7 +58,8 @@ class ArticlesController < ApplicationController
   end
 
   # Retorna a rota para o artigo selecionado
-  def get_article
+  def set_article
     @article = Article.find(params[:id])
+    authorize @article
   end
 end

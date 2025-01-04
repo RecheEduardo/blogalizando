@@ -218,6 +218,8 @@ GEM
     public_suffix (6.0.1)
     puma (6.5.0)
       nio4r (~> 2.0)
+    pundit (2.4.0)
+      activesupport (>= 3.0.0)
     racc (1.8.1)
     rack (2.2.10)
     rack-session (1.0.2)
@@ -372,10 +374,10 @@ DEPENDENCIES
   jbuilder
   kamal
   kaminari
-  letter_opener
   letter_opener_web
   propshaft
   puma (>= 5.0)
+  pundit (~> 2.4)
   rails (~> 8.0.1)
   rubocop-rails-omakase
   selenium-webdriver
