@@ -206,6 +206,8 @@ GEM
     parser (3.3.6.0)
       ast (~> 2.4.1)
       racc
+    pg (1.5.9)
+    pg (1.5.9-x64-mingw-ucrt)
     propshaft (1.1.0)
       actionpack (>= 7.0.0)
       activesupport (>= 7.0.0)
@@ -375,6 +377,7 @@ DEPENDENCIES
   kamal
   kaminari
   letter_opener_web
+  pg
   propshaft
   puma (>= 5.0)
   pundit
