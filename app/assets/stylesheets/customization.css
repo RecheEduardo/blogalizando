@@ -22,6 +22,17 @@
   @media (min-width: 768px) {
     .h-md-250 { height: 250px; }
   }
+
+  @media (max-width: 768px) {
+    .blog-header-logo{
+      font-size: 1.5rem;
+    }
+    .top-nav{
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
   
   /* Pagination */
   .blog-pagination {

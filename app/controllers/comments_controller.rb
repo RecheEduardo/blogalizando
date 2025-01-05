@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
         @article.comments # Adiciona na criação o usuário que fez o comentário
         .create(comment_params.to_h.merge!({ user_id: current_user&.id}))
 
-        redirect_to article_path(@article), notice: 'Comment was sucessfully created!'
+        redirect_to article_path(@article), notice: t('app.create.success', model: Category.model_name.human)
     end
 
     def destroy
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
         @comment.destroy!
 
         respond_to do |format|
-            format.html { redirect_to article_path(@article), status: :see_other, notice: "Comment was successfully deleted." }
+            format.html { redirect_to article_path(@article), status: :see_other, notice: notice: t('app.destroy.success', model: Category.model_name.human) }
             format.json { head :no_content }
         end
     end
