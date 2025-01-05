@@ -2,6 +2,8 @@
 
 Bem-vindo ao **Blogalizando**, um projeto de blog desenvolvido em **Ruby on Rails** com a arquitetura **MVC (Model-View-Controller)**. Este projeto foi criado para gerenciar posts de um blog de forma simples e eficiente, utilizando boas práticas de desenvolvimento e segurança.
 
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ruby_On_Rails_Logo.svg/512px-Ruby_On_Rails_Logo.svg.png" />
+
 ---
 
 ## 🚀 Tecnologias Utilizadas
