@@ -44,14 +44,14 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: "yourdomain.com",
-    user_name: "blogalizandoapp@gmail.com", # Substitua pelo seu e-mail
-    password: "ttmdgaygqhmhjsly",           # Substitua pela sua senha ou chave de aplicativo
+    domain: ENV['MAIL_DOMAIN'], # Agora usa variável de ambiente
+    user_name: ENV['MAIL_USERNAME'], # Variável de ambiente para o nome de usuário
+    password: ENV['MAIL_PASSWORD'], # Variável de ambiente para a senha ou chave de aplicativo
     authentication: "plain",
     enable_starttls_auto: true
   }
 
-  config.action_mailer.default_url_options = { host: "yourdomain.com", protocol: "https" }
+  config.action_mailer.default_url_options = { host: ENV['MAIL_HOST'], protocol: "https" }
 
   # Fallback to default locale for I18n.
   config.i18n.fallbacks = true
