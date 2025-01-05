@@ -40,18 +40,18 @@ Rails.application.configure do
   config.cache_store = :solid_cache_store
 
   # EMAIL
-  config.action_mailer.default_url_options = { host: 'blogalizando.onrender.com' }
-
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
-    domain: "gmail.com",
-    user_name: ENV['SMTP_USERNAME'],
-    password: ENV['SMTP_PASSWORD'],
+    domain: "yourdomain.com",
+    user_name: "blogalizandoapp@gmail.com", # Substitua pelo seu e-mail
+    password: "ttmdgaygqhmhjsly",           # Substitua pela sua senha ou chave de aplicativo
     authentication: "plain",
     enable_starttls_auto: true
   }
+
+  config.action_mailer.default_url_options = { host: "yourdomain.com", protocol: "https" }
 
   # Fallback to default locale for I18n.
   config.i18n.fallbacks = true
