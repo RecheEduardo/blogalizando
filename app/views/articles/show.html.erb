@@ -5,7 +5,7 @@
     
     <p class="blog-post-meta">
         <%= m_d_comma_y(@article.created_at) %> by 
-        <span class="text-secondary fw-bold"><%= @article.user.email if @article.user %></span>
+        <span class="text-secondary fw-bold"><%= sub_masked_email(@article.user.email) if @article.user %></span>
     </p>
     
     <hr>

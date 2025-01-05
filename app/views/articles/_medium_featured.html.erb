@@ -5,7 +5,7 @@
       <h3 class="mb-0"><%= article.title%></h3>
       <div class="my-1 text-muted">
         <%= m_d_comma_y(article.created_at) %> by
-        <span class="text-secondary fw-bold"><%= article.user.email if article.user %></span>
+        <span class="text-secondary fw-bold"><%= sub_masked_email(article.user.email) if article.user %></span>
       </div>
       <p class="card-text mb-auto"><%= truncate(article.body, length: 150) %></p>
       <%= link_to "See more...", article, class:"stretched-link" %>

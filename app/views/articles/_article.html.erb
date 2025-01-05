@@ -3,7 +3,7 @@
     <h2 class="blog-post-title my-2"><%= article.title %></h2>
     <p class="blog-post-meta">
         <%= m_d_comma_y(article.created_at) %> by
-        <span class="text-secondary fw-bold"><%= article.user.email if article.user %>
+        <span class="text-secondary fw-bold"><%= sub_masked_email(article.user.email) if article.user %>
     </p>
     <!-- Helper para formatar textos grandes nos artigos da home -->
     <p style="text-align: justify;"><%= truncate(article.body, length: 300) %></p>
