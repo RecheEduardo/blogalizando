@@ -3,8 +3,9 @@
     <ol class="list-unstyled mb-0">
         <% @archives.each do | timestamp, count | %>
             <li>
-                <%= link_to "#{timestamp.capitalize} (#{count})", articles_path(month_year: timestamp), 
-                class: " #{'category-active' if timestamp == params[:timestamp]}" %>
+                <%= link_to I18n.l(Date.strptime(timestamp, "%B %Y"), format: "%B %Y").capitalize + " (#{count})", 
+                    articles_path(month_year: timestamp), 
+                    class: " #{'category-active' if timestamp == params[:timestamp]}" %>    
             </li>
         <% end %>
     </ol>

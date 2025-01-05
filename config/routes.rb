@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   # Rota principal sem precisar do locale como query string
   root 'articles#index'
+  mount LetterOpenerWeb::Engine, at: "/letter_opener"
 
   scope ':locale', locale: /pt-BR|en/ do
     devise_for :users
 
     # Root dentro do escopo de idioma
     root 'articles#index', as: :localized_root
-
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
     
     # resources - funcionalidade do Rails que retorna helpers & rotas do programa que podem ser utilizados na view 
     resources :articles, except: [:index] do
