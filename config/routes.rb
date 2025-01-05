@@ -2,9 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'articles#index'
 
-  if Rails.env.development? # Gera a rota de emails enviados para confirmar usuário
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.production?
 
   resources :articles do 
     resources :comments, only: %i[create destroy]

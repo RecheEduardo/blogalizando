@@ -67,7 +67,7 @@ end
 gem "kaminari"
 gem 'simple_form'
 gem "devise"
-gem 'letter_opener_web', group: :development
+gem 'letter_opener_web'
 gem "pundit"
 gem "groupdate"
 gem 'pg', group: :production
