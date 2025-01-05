@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
                        .per(3)
 
     # Retorna o agrupamento dos posts em ordem cronológica
-    @archives = Article.group_by_month(:created_at, format: '%B %Y').count
+    @archives = Article.group_by_month(:created_at, format: '%B %Y', locale: :en).count
   end
 
   # Inicia a criação do novo Artigo

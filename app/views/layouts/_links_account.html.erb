@@ -6,7 +6,7 @@
         <ul class="dropdown-menu dropdown-menu-dark">
             <li><%= link_to t('app.menu.edit_user'), edit_user_registration_path, class: 'dropdown-item py-3' %></li>
             <li><hr class="dropdown-divider"></li>
-            <li><%= link_to ('app.menu.sign_out'), destroy_user_session_path, method: :delete, class: 'dropdown-item py-3' %></li>
+            <li><%= link_to t('app.menu.sign_out'), destroy_user_session_path, method: :delete, class: 'dropdown-item py-3' %></li>
         </ul>
     </div>
 <% else %>

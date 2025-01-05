@@ -1,22 +1,22 @@
 Rails.application.routes.draw do
-  # Redireciona o idioma padrão (pt-BR)
-  root to: redirect('/pt-BR')
+  # Rota principal sem precisar do locale como query string
+  root 'articles#index'
 
-  # Sscope de idioma
   scope ':locale', locale: /pt-BR|en/ do
     devise_for :users
 
-    # A raiz dentro do escopo será a lista de artigos
-    # Você pode alterar essa linha para garantir que não exista conflito
-    root 'articles#index', as: :localized_root  # A raiz será a lista de artigos, com idioma prefixado
+    # Root dentro do escopo de idioma
+    root 'articles#index', as: :localized_root
 
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
-
+    
+    # resources - funcionalidade do Rails que retorna helpers & rotas do programa que podem ser utilizados na view 
     resources :articles, except: [:index] do
       resources :comments, only: %i[create destroy]
     end
 
-    # funcionalidade do Rails que retorna helpers & rotas do programa que podem ser utilizados na view 
-    resources :categories, except: %i[show]
+    get 'articles', to: 'articles#index', as: 'articles_index'
+
+    resources :categories, except: [:show]
   end
 end
