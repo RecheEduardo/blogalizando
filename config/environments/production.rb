@@ -61,7 +61,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   # Configura o local onde os e-mails serão armazenados
-  config.action_mailer.letter_opener_settings = { location: Rails.root.join('tmp', 'letter_opener') }
+  # config.action_mailer.letter_opener_settings = { location: Rails.root.join('tmp', 'letter_opener') }
 
   # Set host to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = { host: "blogalizando.onrender.com" }
