@@ -1,14 +1,14 @@
 <% content_for :title, "Categories" %>
 
-<h1>Categories</h1>
+<h1 class="mt-3"><%= t Category.model_name.human(count: 2) %></h1>
 <hr>
 
 <div class="card-body mt-3">
   <table class="table table-bordered table-hover text-center">
     <thead class="table-dark">
       <tr>
-        <th scope="col">Name</th>
-        <th scope="col">Actions</th>
+        <th scope="col"><%= t Category.human_attribute_name('name') %></th>
+        <th scope="col"><%= t('app.word.actions') %></th>
       </tr>
     </thead>
     <tbody>
@@ -18,23 +18,24 @@
           <td>
 
             <%= link_to edit_category_path(category), class: 'btn bg-gradient bg-primary text-light' do %>
-              <i class="bi bi-pencil-square"></i> Edit
+              <%= t('app.button.edit') %>
             <% end %>
 
             <button type="button" class="btn bg-gradient bg-danger text-light" data-bs-toggle="modal" data-bs-target="#deleteModal-<%= category.id %>">
-              Delete
+              <%= t('app.button.destroy') %>
             </button>
           </td>
         </tr>
+        <!-- Modal de exclusão -->
         <div class="modal fade" id="deleteModal-<%= category.id %>" tabindex="-1" aria-labelledby="deleteModalLabel-<%= category.id %>" aria-hidden="true">
           <div class="modal-dialog" role="document">
               <div class="modal-content">
               <div class="modal-header">
-                  <h5 class="modal-title" id="deleteModalLabel-<%= category.id %>">Delete category</h5>
+                  <h5 class="modal-title" id="deleteModalLabel-<%= category.id %>"><%= t('app.button.destroy') %></h5>
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
-                  Do you really want to delete the category "<%= category.name %>"?
+                <strong><%= category.name %></strong> | <%= t('app.message.confirm_destroy') %> 
               </div>
               <div class="modal-footer">
                   <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal">No</button>
@@ -47,4 +48,4 @@
   </table>
 </div>
 <hr>
-<%= link_to "Create category", new_category_path, class: 'btn btn-lg bg-gradient bg-success text-light' %>
+<%= link_to t('categories.new.title'), new_category_path, class: 'btn btn-lg bg-gradient bg-success text-light' %>

@@ -41,7 +41,7 @@ class ArticlesController < ApplicationController
   def create
     @article = current_user.articles.new(article_params)
     if @article.save
-      redirect_to @article, notice: "Article was successfully created."
+      redirect_to @article, notice: t('.success')
     else
       render :new, status: :unprocessable_entity
     end
@@ -59,7 +59,7 @@ class ArticlesController < ApplicationController
   # UPDATE - Executa a edição do Artigo
   def update 
     if @article.update(article_params)
-      redirect_to @article, notice: "Article was successfully updated."
+      redirect_to @article, notice: t('.success')
     else
       render :edit, status: :unprocessable_entity
     end
@@ -68,7 +68,7 @@ class ArticlesController < ApplicationController
   # DELETE - Executa a ação de excluir o Artigo
   def destroy
     @article.destroy
-    redirect_to root_path, notice: "Article was successfully destroyed."
+    redirect_to root_path, notice: t('.success')
   end
 
   private

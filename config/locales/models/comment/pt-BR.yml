@@ -1,0 +1,11 @@
+pt-BR:
+  activerecord:
+    models:
+      comment:
+        one: Comentário
+        other: Comentários
+    attributes:
+      comment:
+        body: Conteúdo
+    delete:
+      delete_msg: 'Você tem certeza que quer apagar esse comentário? Do you really want to delete this comment?'

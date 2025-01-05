@@ -14,14 +14,14 @@ class CategoryPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin? # se o user é admin ele pode criar uma categoria
+    user&.admin? # se o user é admin ele pode criar uma categoria
   end
 
   def update?
-    user.admin?
+    user&.admin?
   end
 
   def destroy?
-    user.admin?
+    user&.admin?
   end
 end

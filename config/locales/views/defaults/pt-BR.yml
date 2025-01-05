@@ -2,14 +2,14 @@ pt-BR:
   app:
     title: Blogalizando
     menu:
-      categories: Categorias
+      categories: Ver categorias
       edit_user: Alterar Usuário
       sign_out: Sair
       enter: Entrar
       sign_in: Fazer Login
       sign_up: Criar conta
     footer:
-      about_me: Meu nome é Eduardo Reche, e sou um desenvolvedor full-stack brasileiro apaixonado por softwares e tecnologia. Não deixe de conferir meu blog para ver algumas das habilidades que eu tenho!
+      about_me: Meu nome é Eduardo Reche, e sou um desenvolvedor full-stack brasileiro apaixonado por softwares e tecnologia. Não deixe de conferir meu blog para ver algumas das minhas habilidades!
       another_projects: Outros projetos
       project_1: React Quiz
       project_2: Portfolio Pessoal
@@ -21,6 +21,8 @@ pt-BR:
     word:
       by: por
       in: em
+      yes: 'Sim'
+      no: 'Não'
       actions: Ações
     button:
       back: Voltar

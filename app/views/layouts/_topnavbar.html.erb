@@ -12,6 +12,8 @@
         <%= link_to t('app.title'), root_path, class:'blog-header-logo text-body-emphasis fw-bold', style:'text-decoration: underline;' %>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
+        <%= render 'layouts/change_lang'%>
+        &nbsp;&nbsp;&nbsp;
         <%= render 'layouts/links_account'%>
       </div>
     </div>

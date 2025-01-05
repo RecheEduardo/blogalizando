@@ -6,7 +6,6 @@ class ApplicationController < ActionController::Base
 
   # permite o uso da gem Pundit no projeto
   include Pundit::Authorization
-
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   private
@@ -14,8 +13,11 @@ class ApplicationController < ActionController::Base
     root_path
   end
   
-  def user_not_authorized
-    flash[:alert] = "You are not authorized to perform this action."
+  def user_not_authorized(exception) # Método do pundit que checa autorizações de usuários
+    policy_name = exception.policy.class.to_s.underscore
+ 
+    #Config de translate do I18n aplicada na flash msg de erro do pundit
+    flash[:alert] = t("#{policy_name}.#{exception.query}", scope: "pundit", default: :default)
     redirect_back_or_to(root_path)
   end
 

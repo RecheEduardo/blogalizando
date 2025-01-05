@@ -5,10 +5,10 @@
   <div class="form-inputs">
     <%= f.input :name %>
   </div>
-
+  <hr class="my-4">
   <div class="form-actions">
     <%= f.button :submit, class: 'btn btn-lg btn-primary' %>
     
-    <%= link_to "Cancel", categories_path, class: 'btn btn-lg btn-secondary' %>
+    <%= link_to t('app.button.back'), categories_path, class: 'btn btn-lg btn-secondary' %>
   </div>
 <% end %>

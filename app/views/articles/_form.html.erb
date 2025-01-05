@@ -18,14 +18,14 @@
   </div>
   <div>
     <!-- O atributo collection filtra para que as categorias aparecam em ordem alfabética -->
-    <%= form.association :category, collection: @categories, prompt: "Choose your category",input_html: { class: "form-control" } %>
+    <%= form.association :category, collection: @categories, prompt: t('articles.form.choose_category'),input_html: { class: "form-control" } %>
   </div>
 
   <br>
 
   <p>
     <%= form.button :submit, class: 'btn btn-primary' %>
-    <%= link_to "Cancel", articles_path, class: 'btn btn-secondary' %>
+    <%= link_to t('app.button.back'), articles_path, class: 'btn btn-secondary' %>
   </p>
 
 <% end %>

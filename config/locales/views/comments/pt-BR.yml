@@ -1,0 +1,11 @@
+pt-BR:
+  comments:
+    index:
+      anonymous: Anônimo
+    word:
+      yes: "Sim"
+      no: "Não"
+      in: "em"  
+    delete:
+      delete_btn: "Excluir comentário"
+      delete_msg: "Você tem certeza que deseja excluir este comentário?"

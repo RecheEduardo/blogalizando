@@ -7,16 +7,14 @@
                 <div>
                     <strong class="text-secondary small">
                         <i class="fa-solid fa-user px-2"></i>
-                        <cite title="Source Title" style="text-decoration: underline;">
-                            <%= comment.author_name %>
-                        </cite>
-                        on <%= m_d_comma_y(comment.created_at) %> 
+                        <cite title="Source Title" style="text-decoration: underline;"><%= comment.author_name %></cite>
+                        <%= t('app.word.in') %> <%= m_d_comma_y(comment.created_at) %> 
                     </strong>
                 </div>
                 <div>
                     <% if current_user && (current_user.admin? || current_user.id == comment.user_id) %>
                         <button type="button" class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal-<%= comment.id %>">
-                            Delete comment
+                            <%= t('comments.delete.delete_btn') %>
                         </button>
                     <% end %>
                 </div>
@@ -30,15 +28,15 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete comment</h5>
+                <h5 class="modal-title" id="exampleModalLabel"><%= t('comments.delete.delete_btn') %></h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                Do you really want to delete this comment?
+                <%= t('comments.delete.delete_msg') %>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal">No</button>
-                <%= link_to "Yes", article_comment_path(@article, comment), method: :delete, class: "btn bg-gradient bg-danger text-light" %>
+                <button type="button" class="btn bg-gradient bg-secondary text-light" data-bs-dismiss="modal"><%= t('app.word.no') %></button>
+                <%= link_to t('word.yes'), article_comment_path(@article, comment), method: :delete, class: "btn bg-gradient bg-danger text-light" %>
             </div>
         </div>
     </div>

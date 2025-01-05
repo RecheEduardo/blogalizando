@@ -1,0 +1,11 @@
+en:
+  comments:
+    index:
+      anonymous: Anonymous
+    word:
+      yes: "Yes"
+      no: "No"
+      in: "in"
+    delete:
+      delete_btn: "Delete comment"
+      delete_msg: "Are you sure you want to delete this comment?"

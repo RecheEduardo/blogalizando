@@ -2,7 +2,7 @@ en:
   app:
     title: Blogalizando
     menu:
-      categories: Categories
+      categories: See categories
       edit_user: Edit User
       sign_out: Sign out
       enter: Enter
@@ -21,15 +21,17 @@ en:
     word:
       by: by
       in: in
+      no: 'No'
+      yes: 'Yes'
       actions: Actions
     button:
       back: Back
-      destroy: Destroy
+      destroy: Delete
       edit: Edit
     edit:
       title: "Editing %{model}"
     message:
-      confirm_destroy: Are you sure?
+      confirm_destroy: Are you sure you wanna delete?
     create:
       success: "%{model} was successfully created."
     update:
