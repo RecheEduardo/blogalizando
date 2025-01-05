@@ -4,20 +4,20 @@
             <%= current_user.email %>
         </button>
         <ul class="dropdown-menu dropdown-menu-dark">
-            <li><%= link_to 'Edit user', edit_user_registration_path, class: 'dropdown-item py-3' %></li>
+            <li><%= link_to t('app.menu.edit_user'), edit_user_registration_path, class: 'dropdown-item py-3' %></li>
             <li><hr class="dropdown-divider"></li>
-            <li><%= link_to 'Sign out', destroy_user_session_path, method: :delete, class: 'dropdown-item py-3' %></li>
+            <li><%= link_to ('app.menu.sign_out'), destroy_user_session_path, method: :delete, class: 'dropdown-item py-3' %></li>
         </ul>
     </div>
 <% else %>
     <div class="dropdown">
         <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Enter
+            <%= t('app.menu.enter')%>
         </button>
         <ul class="dropdown-menu dropdown-menu-dark">
-            <li><%= link_to 'Sign in', new_user_session_path, class: 'dropdown-item py-3' %></li>
+            <li><%= link_to t('app.menu.sign_in'), new_user_session_path, class: 'dropdown-item py-3' %></li>
             <li><hr class="dropdown-divider"></li>
-            <li><%= link_to 'Sign up', new_user_registration_path, class: 'dropdown-item py-3' %></li>
+            <li><%= link_to t('app.menu.sign_up'), new_user_registration_path, class: 'dropdown-item py-3' %></li>
         </ul>
     </div>
 <% end%>

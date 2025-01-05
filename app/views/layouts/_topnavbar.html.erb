@@ -5,11 +5,11 @@
         <!-- Feature do pundit que apenas fornece acesso as categorias
             se o usuário tiver acesso ao index (se admin for true)  -->
         <div class="col-4 pt-1">
-          <%= link_to "See categories", categories_path, class:'link-secondary'%>
+          <%= link_to t('app.menu.categories'), categories_path, class:'link-secondary'%>
         </div>
       <% end %>
       <div class="col-4 text-center">
-        <%= link_to "Blogalizando", root_path, class:'blog-header-logo text-body-emphasis fw-bold', style:'text-decoration: underline;' %>
+        <%= link_to t('app.title'), root_path, class:'blog-header-logo text-body-emphasis fw-bold', style:'text-decoration: underline;' %>
       </div>
       <div class="col-4 d-flex justify-content-end align-items-center">
         <%= render 'layouts/links_account'%>

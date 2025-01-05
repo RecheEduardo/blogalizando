@@ -1,0 +1,38 @@
+en:
+  app:
+    title: Blogalizando
+    menu:
+      categories: Categories
+      edit_user: Edit User
+      sign_out: Sign out
+      enter: Enter
+      sign_in: Sign in
+      sign_up: Sign up
+    footer:
+      about_me: My name is Eduardo Reche, and I’m a Brazilian full-stack developer with a passion for softwares and technology. Be sure to check out my blog for some of the skills I bring to the table!
+      another_projects: Another Projects
+      project_1: React Quiz
+      project_2: Personal Portfolio
+      project_3: Sportlife Showcase
+      project_4: ToDo List
+    pagination:
+      older: Older
+      newer: Newer
+    word:
+      by: by
+      in: in
+      actions: Actions
+    button:
+      back: Back
+      destroy: Destroy
+      edit: Edit
+    edit:
+      title: "Editing %{model}"
+    message:
+      confirm_destroy: Are you sure?
+    create:
+      success: "%{model} was successfully created."
+    update:
+      success: "%{model} was successfully updated."
+    destroy:
+      success: "%{model} was successfully destroyed."

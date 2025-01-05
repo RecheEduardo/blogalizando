@@ -1,0 +1,25 @@
+en:
+  articles:
+    see_more: See more...
+    about:
+      title: About
+      description: Hello user! I'm Eduardo Reche, a Brazilian full-stack developer with a passion for softwares and technology. I strive to balance creativity and professionalism in all my projects. Be sure to check out this website for some of the skills I bring to the table!
+    archives: Archives
+    elsewhere: Elsewhere
+    index:
+      subtitle: My journey
+      new_article: New Article
+    new:
+      title: New Article
+    create:
+      success: Article was successfully created.
+    update:
+      success: Article was successfully updated.
+    destroy:
+      success: Article was successfully destroyed.
+    form:
+      choose_category: Choose a Category
+    show:
+      comments: Comments
+      add_comment: "Add a comment:"
+      login_create_comment: Please, login to create a comment.

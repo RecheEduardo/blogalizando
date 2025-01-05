@@ -1,0 +1,38 @@
+pt-BR:
+  app:
+    title: Blogalizando
+    menu:
+      categories: Categorias
+      edit_user: Alterar Usuário
+      sign_out: Sair
+      enter: Entrar
+      sign_in: Fazer Login
+      sign_up: Criar conta
+    footer:
+      about_me: Meu nome é Eduardo Reche, e sou um desenvolvedor full-stack brasileiro apaixonado por softwares e tecnologia. Não deixe de conferir meu blog para ver algumas das habilidades que eu tenho!
+      another_projects: Outros projetos
+      project_1: React Quiz
+      project_2: Portfolio Pessoal
+      project_3: Sportlife Showcase
+      project_4: ToDo List
+    pagination:
+      older: Anterior
+      newer: Próximo
+    word:
+      by: por
+      in: em
+      actions: Ações
+    button:
+      back: Voltar
+      destroy: Excluir
+      edit: Alterar
+    edit:
+      title: "Alterando %{model}"
+    message:
+      confirm_destroy: Você tem certeza que deseja excluir?
+    create:
+      success: "%{model} foi criado(a) com sucesso."
+    update:
+      success: "%{model} foi alterado(a) com sucesso."
+    destroy:
+      success: "%{model} foi excluído(a) com sucesso."

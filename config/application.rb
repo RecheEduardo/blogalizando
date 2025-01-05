@@ -18,6 +18,7 @@ module BlogORama
 
     # config.time_zone = 'America/Sao_Paulo' # Configuração para as queries
     config.active_record.default_timezone = :utc
+    config.i18n.default_locale = :pt
 
     # Configuration for the application, engines, and railties goes here.
     #

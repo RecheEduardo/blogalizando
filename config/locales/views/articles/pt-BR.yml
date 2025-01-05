@@ -1,0 +1,25 @@
+pt-BR:
+  articles:
+    see_more: Ver mais...
+    about:
+      title: Sobre
+      description: Olá usuário! Eu sou Eduardo Reche, um desenvolvedor full-stack brasileiro apaixonado por softwares e tecnologia. Busco equilibrar criatividade e profissionalismo em todos os meus projetos. Confira este site para ver algumas minhas habilidades!
+    archives: Arquivos
+    elsewhere: Veja também
+    index:
+      subtitle: Minha jornada
+      new_article: Novo Artigo
+    new:
+      title: Novo Artigo
+    create:
+      success: Artigo foi criado com sucesso.
+    update:
+      success: Artigo foi alterado com sucesso.
+    destroy:
+      success: Artigo foi excluído com sucesso.
+    form:
+      choose_category: Escolha uma Categoria
+    show:
+      comments: Comentários
+      add_comment: "Adicione um comentário:"
+      login_create_comment: Por favor, faça o login para criar um comentário.

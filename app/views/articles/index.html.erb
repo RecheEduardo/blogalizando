@@ -11,9 +11,9 @@
   <div class="row g-5">
     <div class="col-md-8">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        All my journey
+        <%= t('.subtitle')%>
       </h3>
-      <%= link_to "Create your article", new_article_path, class: 'btn btn-lg btn-success' %>
+      <%= link_to t('.new_article'), new_article_path, class: 'btn btn-lg btn-success' %>
       <br><br> 
       <!-- Funcionalidade do rails para iterar os componentes -->
       <!-- a linha abaixo realiza um each.do para cada artigo que foi passado pelo controller -->
