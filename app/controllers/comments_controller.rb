@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
         @comment.destroy!
 
         respond_to do |format|
-            format.html { redirect_to article_path(@article), status: :see_other, notice: notice: t('app.destroy.success', model: Category.model_name.human) }
+            format.html { redirect_to article_path(@article), status: :see_other, notice: t('app.destroy.success', model: Category.model_name.human) }
             format.json { head :no_content }
         end
     end

@@ -7,7 +7,7 @@
                 <div>
                     <strong class="text-secondary small">
                         <i class="fa-solid fa-user px-2"></i>
-                        <cite title="Source Title" style="text-decoration: underline;"><%= comment.author_name %></cite>
+                        <cite title="Source Title" style="text-decoration: underline;"><%= sub_masked_email(comment.author_name) %></cite>
                         <%= t('app.word.in') %> <%= m_d_comma_y(comment.created_at) %> 
                     </strong>
                 </div>
