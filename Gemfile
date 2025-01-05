@@ -65,9 +65,7 @@ end
 # GENS ADICIONADAS NO PROJETO
 gem "kaminari"
 gem 'simple_form'
-gem "dartsass-rails"
 gem "devise"
 gem 'letter_opener_web', group: :development
 gem "pundit"
 gem "groupdate"
-
