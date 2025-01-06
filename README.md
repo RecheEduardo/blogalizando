@@ -9,27 +9,53 @@
 <a href="https://www.youtube.com/watch?v=0C7U4U3IDXU" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ruby_On_Rails_Logo.svg/512px-Ruby_On_Rails_Logo.svg.png"/> </a>
 
 ---
-<h3><a href="https://blogalizando.onrender.com" target="_blank">Link para o site</a>  &nbsp;**pode ser que demore para carregar devido a hospedagem e situação do servidor Render</h3>
-
-Bem-vindo ao **Blogalizando**, um projeto de blog simples desenvolvido em **Ruby on Rails** com a arquitetura **MVC (Model-View-Controller)**. O objetivo do Blogalizando é fornecer uma aplicação web de gerenciamento de posts, com funcionalidades essenciais como cadastro e autenticação de usuários, gerenciamento de permissões de acesso e navegação otimizada através de paginação. A aplicação também segue boas práticas de desenvolvimento e segurança para garantir uma experiência robusta e confiável para os usuários.
+<h3><a href="https://blogalizando.onrender.com" target="_blank"> ✔ Link para o site</a>
+<br><br>
+🟥 pode ser que demore para carregar devido a hospedagem e situação do servidor Render</h3>
 
 ---
 
-## 🚀 Tecnologias Utilizadas
+### • 💡 Tutorial para criação de contas no mailer ( uso da gem opener_web explicada no vídeo acima, minuto: 07:45 )
 
-O projeto foi desenvolvido com as seguintes tecnologias:
+https://github.com/user-attachments/assets/c772c326-2c93-451b-ae55-96e6e5aafdc8
 
-- **Ruby**: A linguagem de programação principal utilizada no projeto. Ruby é uma linguagem dinâmica, de alto nível e orientada a objetos, muito conhecida pela simplicidade e elegância de sua sintaxe. Sua combinação com o Rails permite que o desenvolvimento de aplicações web seja ágil e com boa legibilidade do código. Ruby promove a produtividade do desenvolvedor com um ecossistema de bibliotecas e ferramentas bem estruturado, seguindo o príncipio CoC (Convention over Configuration).
+---
 
-- **Ruby on Rails**: Framework full-stack utilizado para estruturar a aplicação. Rails adota convenções que tornam o desenvolvimento de aplicações web mais rápido e eficiente, com muitas funcionalidades prontas para uso, como o roteamento, manipulação de banco de dados, e renderização de views. A arquitetura **MVC** do Rails separa claramente a lógica de controle, visualização e acesso a dados, facilitando a manutenção e escalabilidade do sistema.
+Bem-vindo ao **Blogalizando!**, um projeto de blog desenvolvido em **Ruby on Rails** com a arquitetura **MVC (Model-View-Controller)**. O objetivo do Blogalizando é fornecer uma aplicação web de gerenciamento de posts, com funcionalidades essenciais como cadastro e autenticação de usuários, gerenciamento de permissões de acesso e navegação otimizada através de paginação. A aplicação também segue boas práticas de desenvolvimento e segurança para garantir uma experiência robusta e agradável para os usuários.
 
-- **Bootstrap**: Framework CSS utilizado para estilizar e tornar a interface da aplicação mais agradável e responsiva. O Bootstrap facilita o design da aplicação, proporcionando uma interface limpa e consistente em dispositivos móveis e desktop sem a necessidade de criar CSS do zero. Ele inclui componentes como botões, formulários, modais e grids, que são amplamente utilizados para garantir uma experiência de usuário rica e adaptável.
+---
 
-- **JavaScript**: Usado para adicionar interatividade à aplicação. O JavaScript permite, por exemplo, manipulação dinâmica de conteúdo na página sem a necessidade de recarregar a página inteira, proporcionando uma experiência de usuário mais fluida. No contexto do Blogalizando, o JavaScript é utilizado para interações como formulários dinâmicos e controle de navegação.
+# 🚀 Tecnologias Utilizadas
 
-- **SQLite3**: Banco de dados utilizado durante o desenvolvimento da aplicação. SQLite é uma solução de banco de dados leve, ideal para ambientes de desenvolvimento e testes. Ele não requer uma instalação de servidor e armazena dados localmente no sistema de arquivos, facilitando a configuração do projeto em máquinas de desenvolvimento.
+## O projeto foi desenvolvido com as seguintes tecnologias:
 
-- **PostgreSQL**: Banco de dados utilizado em produção, oferecendo maior robustez e desempenho para lidar com grandes volumes de dados. O PostgreSQL é um banco de dados relacional de código aberto conhecido por sua confiabilidade, performance e conformidade com padrões SQL. Ele é ideal para ambientes de produção, onde a consistência e escalabilidade dos dados são essenciais.
+<img src="https://img.shields.io/badge/Ruby-CC342D?style=for-the-badge&logo=ruby&logoColor=white" height="35"  />
+
+A linguagem de programação principal utilizada no projeto. Ruby é uma linguagem dinâmica, de alto nível e orientada a objetos, muito conhecida pela simplicidade e elegância de sua sintaxe. Sua combinação com o Rails permite que o desenvolvimento de aplicações web seja ágil e com boa legibilidade do código. Ruby promove a produtividade do desenvolvedor com um ecossistema de bibliotecas e ferramentas bem estruturado, seguindo o príncipio CoC (Convention over Configuration).
+
+##
+
+<img src="https://img.shields.io/badge/Ruby_on_Rails-CC0000?style=for-the-badge&logo=ruby-on-rails&logoColor=white" height="35"  />
+
+Framework full-stack utilizado para estruturar a aplicação. Rails adota convenções que tornam o desenvolvimento de aplicações web mais rápido e eficiente, com muitas funcionalidades prontas para uso, como o roteamento, manipulação de banco de dados, e renderização de views. A arquitetura **MVC** do Rails separa claramente a lógica de controle, visualização e acesso a dados, facilitando a manutenção e escalabilidade do sistema.
+
+##
+
+<img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" height="35"  />
+
+Framework CSS utilizado para estilizar e tornar a interface da aplicação mais agradável e responsiva. O Bootstrap facilita o design da aplicação, proporcionando uma interface limpa e consistente em dispositivos móveis e desktop sem a necessidade de criar CSS do zero. Ele inclui componentes como botões, formulários, modais e grids, que são amplamente utilizados para garantir uma experiência de usuário rica e adaptável.
+
+##
+
+<img src="https://img.shields.io/badge/Sqlite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" height="35"  />
+
+Banco de dados utilizado durante o desenvolvimento da aplicação. SQLite é uma solução de banco de dados leve, ideal para ambientes de desenvolvimento e testes. Ele não requer uma instalação de servidor e armazena dados localmente no sistema de arquivos, facilitando a configuração do projeto em máquinas de desenvolvimento.
+
+##
+
+<img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" height="35"  />
+
+Banco de dados utilizado em produção, oferecendo maior robustez e desempenho para lidar com grandes volumes de dados. O PostgreSQL é um banco de dados relacional de código aberto conhecido por sua confiabilidade, performance e conformidade com padrões SQL. Ele é ideal para ambientes de produção, onde a consistência e escalabilidade dos dados são essenciais.
 
 ---
 
