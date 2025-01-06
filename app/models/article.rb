@@ -7,7 +7,6 @@ class Article < ApplicationRecord
     validates :body, presence: true, length: {minimum:10}
 
     # Scopes para manter responsabilidades de consulta para o model da aplicação
-    
     # Ordena pela data de criação
     scope :desc_order, -> { order(created_at: :desc)} 
 
