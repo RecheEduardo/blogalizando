@@ -87,6 +87,9 @@ GEM
     brakeman (7.0.0)
       racc
     builder (3.3.0)
+    bullet (8.0.0)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     capybara (3.40.0)
       addressable
       matrix
@@ -120,6 +123,11 @@ GEM
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
+    factory_bot (6.5.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.4.4)
+      factory_bot (~> 6.5)
+      railties (>= 5.0.0)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -377,6 +385,7 @@ GEM
     unicode-display_width (3.1.3)
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
+    uniform_notifier (1.16.0)
     uri (1.0.2)
     useragent (0.16.11)
     warden (1.2.9)
@@ -402,10 +411,12 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
+  bullet
   capybara
   debug
   devise
   devise-i18n
+  factory_bot_rails
   groupdate
   importmap-rails
   jbuilder

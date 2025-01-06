@@ -53,6 +53,9 @@ group :development, :test do
 
   # Rspec para criação de testes automatizado
   gem 'rspec-rails'
+  # Factory bot para criar instancias de modelo de teste
+  gem 'factory_bot_rails'
+  gem 'bullet'
 end
 
 group :development do
