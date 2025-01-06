@@ -24,7 +24,7 @@ en:
       add_comment: "Add a comment:"
       login_create_comment: Please, login to create a comment.
     upload:
-      title: "Or upload a TXT file to populate the form"
+      title: "Or upload a .TXT file to populate the form"
       upload_button: "Upload file"
       no_file: "No file was selected."
       file_error: "Error processing the file: %{error}"

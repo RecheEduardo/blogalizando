@@ -24,7 +24,7 @@ pt-BR:
       add_comment: "Adicione um comentário:"
       login_create_comment: Por favor, faça o login para criar um comentário.
     upload:
-      title: "Ou carregue um arquivo TXT para preencher o formulário"
+      title: "Ou carregue um arquivo .TXT para preencher o formulário"
       upload_button: "Carregar arquivo"
       no_file: "Nenhum arquivo foi selecionado."
       file_error: "Erro ao processar o arquivo: %{error}"

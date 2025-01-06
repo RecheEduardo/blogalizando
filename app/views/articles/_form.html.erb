@@ -43,7 +43,7 @@
 <% end %>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('turbo:load', function () {
     const uploadForm = document.getElementById('upload-form');
     const fileInput = document.getElementById('file-input');
     const bodyTextArea = document.querySelector('textarea[name="article[body]"]');
@@ -52,6 +52,13 @@
       event.preventDefault();
   
       const file = fileInput.files[0];
+      const existingFlashMessage = document.querySelector('.alert.alert-danger');  // Encontra a mensagem de erro existente
+  
+      // Se já houver uma mensagem de erro, remove-a
+      if (existingFlashMessage) {
+        existingFlashMessage.remove();
+      }
+  
       if (file) {
         const reader = new FileReader();
         reader.onload = function(e) {
@@ -72,5 +79,5 @@
         flashMessage.focus();
       }
     });
-  });
+  });  
 </script>
