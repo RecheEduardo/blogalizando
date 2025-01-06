@@ -9,6 +9,7 @@
 <a href="https://www.youtube.com/watch?v=0C7U4U3IDXU" target="_blank"> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Ruby_On_Rails_Logo.svg/512px-Ruby_On_Rails_Logo.svg.png"/> </a>
 
 ---
+<h3><a href="https://blogalizando.onrender.com" target="_blank">Link para o site</a>  &nbsp;**pode ser que demore para carregar devido a hospedagem e situação do servidor Render</h3>
 
 Bem-vindo ao **Blogalizando**, um projeto de blog simples desenvolvido em **Ruby on Rails** com a arquitetura **MVC (Model-View-Controller)**. O objetivo do Blogalizando é fornecer uma aplicação web de gerenciamento de posts, com funcionalidades essenciais como cadastro e autenticação de usuários, gerenciamento de permissões de acesso e navegação otimizada através de paginação. A aplicação também segue boas práticas de desenvolvimento e segurança para garantir uma experiência robusta e confiável para os usuários.
 
