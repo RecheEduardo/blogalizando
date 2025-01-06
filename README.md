@@ -519,17 +519,3 @@ end
 3. Comite suas alterações: `git commit -am 'Adicionando nova feature'`.
 4. Faça o push para a branch: `git push origin minha-feature`.
 5. Abra um Pull Request.
-
----
-
-## 📝 Licença
-
-Este projeto está licenciado sob a licença [MIT](https://opensource.org/licenses/MIT).
-
----
-
-## 💬 Contato
-
-- **Autor**: Eduardo Reche Martins
-- **Email**: seuemail@example.com
-- **LinkedIn**: [linkedin.com/in/seulinkedin](https://linkedin.com/in/seulinkedin)
