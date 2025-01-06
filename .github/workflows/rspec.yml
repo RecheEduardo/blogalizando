@@ -1,0 +1,34 @@
+name: Rodando testes do Rspec
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  rspec:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out the code
+      uses: actions/checkout@v3
+
+    - name: setar o ruby
+      uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 3.3.6
+
+    - name: instalar dependencias
+      run: |
+        gem install bundler
+        bundle install
+
+    - name: Grant execute permission to bin/rubocop
+      run: chmod +x bin/rubocop
+
+    - name: Run RSpec tests
+      run: |
+        bundle exec rspec
