@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
     def destroy
         @comment = @article.comments.find(params[:id])
 
+        # check de verificação do pundit
         unless current_user&.admin? || current_user&.id == @comment.user_id
             redirect_to article_path(@article), alert: "You are not authorized to delete this comment."
             return

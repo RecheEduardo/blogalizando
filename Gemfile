@@ -69,7 +69,7 @@ group :test do
   gem "selenium-webdriver"
 end
 
-# GENS ADICIONADAS NO PROJETO
+# GEMS ADICIONADAS NO PROJETO
 gem "kaminari"
 gem 'simple_form'
 gem "devise"

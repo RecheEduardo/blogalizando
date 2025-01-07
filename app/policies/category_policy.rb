@@ -9,12 +9,13 @@ class CategoryPolicy < ApplicationPolicy
     end
   end
 
+  # user&.admin? se o user é admin ele pode realizar a ação
   def index?
     user&.admin
   end
 
   def create?
-    user&.admin? # se o user é admin ele pode criar uma categoria
+    user&.admin?
   end
 
   def update?

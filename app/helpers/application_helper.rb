@@ -3,7 +3,7 @@ module ApplicationHelper
         # Apenas será renderizado o componente caso a condição seja verdadeira
         render(template, record) if condition 
     end
-
+    # helpers para formatar dados
     def m_d_comma_y(date)
         l(date, format: ('%B %e, %Y')).capitalize
     end

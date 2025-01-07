@@ -1,4 +1,7 @@
 class CategoriesController < ApplicationController
+  
+  # Esse controller foi gerado automaticamente com o 'g scaffold'
+
   before_action :authenticate_user! # só é possível acessar as rotas se o usuário estiver logado
   before_action :set_category, only: %i[edit update destroy ]
 

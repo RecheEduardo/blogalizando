@@ -5,6 +5,6 @@ class Comment < ApplicationRecord
   validates :body, presence: true
 
   def author_name
-    user ? user.email : I18n.t('comments.index.anonymous')
+    user ? user.email : I18n.t('comments.index.anonymous') # se não tiver usuário na tabela de comments será 'anonimo'
   end
 end

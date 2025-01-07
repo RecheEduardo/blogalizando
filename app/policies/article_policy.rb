@@ -3,9 +3,9 @@ class ArticlePolicy < ApplicationPolicy
   def show?
     true
   end
-
+  # user&.id == record.user.id || user&.admin? retorna true apenas se for o autor ou admin do site
   def update?
-    user&.id == record.user.id || user&.admin?  # Retorna true apenas se for o autor ou admin do site
+    user&.id == record.user.id || user&.admin?  
   end
 
   def destroy?
