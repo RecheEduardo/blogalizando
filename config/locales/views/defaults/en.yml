@@ -11,10 +11,10 @@ en:
     footer:
       about_me: My name is Eduardo Reche, and I’m a Brazilian full-stack developer with a passion for softwares and technology. Be sure to check out my blog for some of the skills I bring to the table!
       another_projects: Another Projects
-      project_1: React Quiz
+      project_1: VueDex
       project_2: Personal Portfolio
-      project_3: Sportlife Showcase
-      project_4: ToDo List
+      project_3: CRUD Showcase
+      project_4: DataForge API
     pagination:
       older: Older
       newer: Newer
